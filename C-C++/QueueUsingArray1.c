@@ -1,0 +1,76 @@
+#include"stdio.h"
+
+void push(int );
+int pop();
+int full();
+int empty();
+int full();
+int r=-1,f=-1;
+int x[5];
+
+main()
+{
+	int n,data;
+	do
+	{
+		printf("\n1 to push data.\n");
+		printf("2 to pop data.\n");
+		printf("0 to quit.\n");
+		printf("Enter choice: ");
+		scanf("%d",&n);
+		if(n==1)
+		{
+			if(full())
+			{
+				printf("queue is full.\n");
+				continue;
+			}
+			printf("Enter data: ");
+			scanf("%d",&data);
+			push(data);
+		}
+		else if(n==2)
+		{
+			if(empty())
+			{
+				printf("Queue is empty.\n");
+				continue;
+			}
+			data=pop();
+			printf("%d",data);
+		}
+	}while(n!=0);
+}
+void push(int data)
+{
+	if(r==-1)
+	{
+		r=0;
+		f=0;
+	}
+	x[r]=data;
+	r++;
+}
+int pop()
+{
+	int k=x[f];
+	f++;
+	return k;
+}
+int empty()
+{
+	if(f==r)
+	{
+		f=r=-1;
+		return 1;
+	}
+	else
+		return 0;
+}
+int full()
+{
+	if(r>4)	
+		return 1;
+	else
+		return 0;
+}

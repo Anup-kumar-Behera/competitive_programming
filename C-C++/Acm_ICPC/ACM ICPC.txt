@@ -1,0 +1,4 @@
+Day1 - 10/04/2020
+	1.String Manupulation:-
+		1. KPM algorithm
+		2.Naive Pattern Matching Algorithm
